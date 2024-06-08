@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y \
     git
 
 RUN python3 -m venv /appenv && \
+    chmod +x /appenv/bin/activate && \
     . /appenv/bin/activate && \
     pip3 install PyYAML
 
