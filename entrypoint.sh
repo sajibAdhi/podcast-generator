@@ -1,5 +1,7 @@
 #!/bin/bash
 
+/appenv/bin/activate
+
 echo "Starting the application=============================="
 
 # Start the application

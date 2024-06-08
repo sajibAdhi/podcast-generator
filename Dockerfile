@@ -16,4 +16,4 @@ COPY entrypoint.sh /entrypoint.sh
 
 RUN chmod +x /entrypoint.sh
 
-ENTRYPOINT ["/appenv/bin/activate","/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
