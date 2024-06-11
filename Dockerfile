@@ -1,14 +1,15 @@
-FROM ubuntu:latest
+# Use an official Python runtime as a parent image
+FROM python:3.8-slim-buster
 
-RUN apt-get update && apt-get install -y \
-    python3.10 \
-    python3-pip \
-    git
+# Set the working directory in the container to /app
+WORKDIR /app
 
-RUN pip3 install PyYAML
+# Copy the current directory contents into the container at /app
+COPY . /app
 
-COPY feed.py /usr/bin/feed.py
-
-COPY entrypoint.sh /entrypoint.sh
+# Install any needed packages specified in requirements.txt
+RUN python3 -m venv /app/venv
+RUN /app/venv/bin/pip install --upgrade pip
+RUN /app/venv/bin/pip install PyYAML
 
 ENTRYPOINT ["/entrypoint.sh"]
