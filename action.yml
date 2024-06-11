@@ -1,6 +1,6 @@
 name: "Podcast Generator"
 author: "Sajib Adhikary"
-description: "Generate podcast episodes from YAML files"
+description: "Generate podcast episodes from YAML file"
 runs:
   using: "docker"
   image: "Dockerfile"
